@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import Person from './Person/Person'
-//import Radium, {StyleRoot} from 'radium'
 
 class App extends Component {
 
@@ -44,20 +43,8 @@ class App extends Component {
 	};
 
 	render() {
-		const btnStyle = {
-			backgroundColor: 'green',
-			color: 'white',
-			font: 'inherit',
-			border: '1px solid blue',
-			padding: '8px',
-			/*cursor: 'pointer',
-			':hover': {
-				backgroundColor: 'lightgreen',
-				color: 'black'
-			}*/
-		};
-
 		let persons = null;
+		let btnClass = '';
 
 		if (this.state.showPersons){
 			persons = (
@@ -72,11 +59,7 @@ class App extends Component {
 					})}
 				</div>
 			);
-			btnStyle.backgroundColor = 'red';
-			/*btnStyle[':hover'] = {
-				backgroundColor: 'salmon',
-				color: 'black'
-			}*/
+			btnClass = classes.Red;
 		}
 
 		let assignedClasses = [];
@@ -92,7 +75,7 @@ class App extends Component {
 					<h1>React Start</h1>
 					<p className={assignedClasses.join(' ')}>Dynamiczne style</p>
 					<button
-						style = {btnStyle}
+						className={btnClass}
 						onClick={this.togglePersonHandler}>Toggle persons
 					</button>
 					{persons}
@@ -101,4 +84,4 @@ class App extends Component {
 	}
 }
 
-export default App; //Radium(App);
+export default App;
