@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person'
 //import Radium, {StyleRoot} from 'radium'
 
@@ -79,18 +79,18 @@ class App extends Component {
 			}*/
 		}
 
-		let classes = [];
+		let assignedClasses = [];
 		if (this.state.persons.length <= 2){
-			classes.push('red');
+			assignedClasses.push(classes.red);
 		}
 		if (this.state.persons.length <= 1){
-			classes.push('bold');
+			assignedClasses.push(classes.bold);
 		}
 
 		return (
-				<div className="App">
+				<div className={classes.App}>
 					<h1>React Start</h1>
-					<p className={classes.join(' ')}>Dynamiczne style</p>
+					<p className={assignedClasses.join(' ')}>Dynamiczne style</p>
 					<button
 						style = {btnStyle}
 						onClick={this.togglePersonHandler}>Toggle persons
