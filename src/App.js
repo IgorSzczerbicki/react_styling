@@ -88,15 +88,15 @@ class App extends Component {
 		}
 
 		return (
-			<div className="App">
-				<h1>React Start</h1>
-				<p className={classes.join(' ')}>Dynamiczne style</p>
-				<button
-					style = {btnStyle}
-					onClick={this.togglePersonHandler}>Toggle persons
-				</button>
-				{persons}
-			</div>
+				<div className="App">
+					<h1>React Start</h1>
+					<p className={classes.join(' ')}>Dynamiczne style</p>
+					<button
+						style = {btnStyle}
+						onClick={this.togglePersonHandler}>Toggle persons
+					</button>
+					{persons}
+				</div>
 		);
 	}
 }
