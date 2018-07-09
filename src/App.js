@@ -44,7 +44,8 @@ class App extends Component {
 
 	render() {
 		const btnStyle = {
-			backgroundColor: 'white',
+			backgroundColor: 'green',
+			color: 'white',
 			font: 'inherit',
 			border: '1px solid blue',
 			padding: '8px',
@@ -66,11 +67,21 @@ class App extends Component {
 					})}
 				</div>
 			);
+			btnStyle.backgroundColor = 'red';
+		}
+
+		let classes = [];
+		if (this.state.persons.length <= 2){
+			classes.push('red');
+		}
+		if (this.state.persons.length <= 1){
+			classes.push('bold');
 		}
 
 		return (
 			<div className="App">
 				<h1>React Start</h1>
+				<p className={classes.join(' ')}>Dynamiczne style</p>
 				<button
 					style = {btnStyle}
 					onClick={this.togglePersonHandler}>Toggle persons
